@@ -22,7 +22,7 @@ void setup() {
   }
 
   WiFi.mode(WIFI_STA);
-  WiFiMulti.addAP("NOME_DA_REDE", "SENHA_DA_REDE"); // nome e senha da rede a se conectar.
+  WiFiMulti.addAP("AP 1003", "naoconecte"); // nome e senha da rede a se conectar.
 
 }
 
@@ -35,7 +35,7 @@ void loop() {
     HTTPClient http;
 
     Serial.print("[HTTP] Iniciar...\n");
-    if (http.begin(client, "http://jigsaw.w3.org/HTTP/connection.html")) {  // inicia o cliente http
+    if (http.begin(client, "http://ec2-18-227-49-45.us-east-2.compute.amazonaws.com:8080/ventilador/status")) {  // inicia o cliente http
 
 
       Serial.print("[HTTP] GET...\n");
